@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/product/layout :: head"></head>
+
+<body>
+<div align="center">
+    <h2>Delete product</h2>
+    <form action="/products/delete-product" method="post">
+        <table cellpadding="1" border="1">
+            <tr>
+                <td>Id</td>
+                <td>
+                    <input id="1" onclick="changeColor()" type="text" name="id" placeholder="Auto" th:value="${product.getId()}">
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input id="2" onclick="changeColor()" type="text" name="name" th:value="${product.getName()}">
+                </td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>
+                    <input id="3" onclick="changeColor()" type="text" name="price" th:value="${product.getPrice()}">
+                </td>
+            </tr>
+        </table>
+        <button>Delete</button>
+        <button><a href="/products/">Back to list</a></button>
+    </form>
+</div>
+</body>
+</html>
